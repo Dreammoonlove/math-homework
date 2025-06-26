@@ -179,6 +179,14 @@
                         {id: 't_jian', text: '减法', count: 0, fn: tuo_jian},
                     ]
                 },
+                {
+                    id: 'y', text: '余数计算',
+                    subs: [
+                        {id: 'y_ge', text: '求余（个位）', count: 4, fn: yu_wei1},
+                        {id: 'y_shi', text: '求余（十位）', count: 2, fn: yu_wei10},
+                        {id: 'y_bai', text: '求余（百位）', count: 2, fn: yu_wei100},
+                    ]
+                },
             ];
 
             var host = document.getElementById("container");
@@ -246,7 +254,33 @@
                 }
             }
 
+//---------------------------------------------------------
+            //个位数求余
+            function yu_wei1() {
+                while (true) {
+                    var a = randomNum(1, 9);
+                    var b = randomNum(1, 9);
+                    return ["" + a + " % " + b, a % b];
+                }
+            }
+            //十位数求余
+            function yu_wei10() {
+                while (true) {
+                    var a = randomNum(10, 99);
+                    var b = randomNum(10, 99);
+                    return ["" + a + " % " + b, a % b];
+                }
+            }
+            //百位数求余
+            function yu_wei100() {
+                while (true) {
+                    var a = randomNum(10, 99);
+                    var b = randomNum(10, 99);
+                    return ["" + a + " % " + b, a % b];
+                }
+            }
 
+//------------------------------------------
             //十位数加法
             function jia10() {
                 while (true) {
@@ -257,7 +291,6 @@
                         return ["" + a + " + " + b, a + b];
                     }
                 }
-
             }
 
             //百位数加法
